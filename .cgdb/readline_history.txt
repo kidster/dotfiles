@@ -1,0 +1,448 @@
+
+ls
+continue 
+n
+n
+set werner = false
+n
+continue 
+exit
+quit 
+y
+continue 
+r
+quit
+y
+c
+exit
+clear
+exit
+quit
+y
+c
+n
+n
+set werner = false
+n
+n
+s
+next
+c
+stepi 
+n
+n
+set werner = false
+n
+n
+n
+continue 
+n
+quit
+y
+ls
+ls
+r
+n
+n
+n
+n
+n
+n
+n
+n
+n
+p image
+ls
+c
+n
+n
+s
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+p lx
+ly
+p ly
+p imagepos
+p imagpos
+c
+n
+n
+n
+c
+p px
+p gx
+n
+n
+c
+n
+p BoundRect 
+ n
+p dist
+c
+cc
+c
+c
+n
+n
+n
+n
+n
+n
+n
+n
+n
+n
+c
+clear
+ls
+stop
+ls
+quit
+y
+r
+n
+n
+p sound
+n
+p sound
+p sound->pitch
+s
+n
+p sound->scene
+n
+n
+print sound_entity 
+n
+c
+n
+n
+n
+n
+exit
+exit
+quit
+y
+r
+n
+n
+n
+n
+n
+s
+n
+c
+r
+y
+n
+s
+n
+p position
+n
+n
+r
+y
+n
+p gui->uiPosXLeft(0)
+p gui->uiPosYTop(-1)
+c
+c
+exit
+quit
+y
+r
+r
+y
+s
+p button_size 
+p window_width 
+p window_height 
+p name
+c
+n
+p button_size 
+p window_width 
+p window_height 
+q
+y
+r
+p s_x_ 
+p s_y_ 
+p e_x
+p e_x_ 
+p e_y_ 
+c
+r
+y
+n
+p s_x_ 
+p *this
+n
+p s_x_ 
+n
+p s_x_ 
+n
+c
+p s_x_ 
+bt
+n
+p e_x_ 
+c
+p e_x_ 
+n
+c
+p e_x_ 
+c
+quit
+r
+n
+p a
+p a.s_x_ 
+c
+exit
+quit
+r
+n
+p a.s_x_ 
+c
+exit
+quit
+c
+r
+n
+p a.s_x_ 
+p a.s_y_ 
+quit
+y
+r
+s
+c
+quit
+r
+s
+n
+quit
+y
+r
+s
+n
+p args 
+p args.s_x_ 
+n
+c
+r
+s
+n
+s
+n
+s
+c
+r
+s
+n
+s
+n
+s
+n
+p s_x_ 
+s
+p s_x_ 
+n
+p s_x_ 
+qut
+quit
+y
+r
+s
+n
+s
+n
+s
+n
+s
+c
+quit
+r
+p ss
+p ss
+n
+p tt_font 
+p tt_font.size 
+n
+c
+quit
+r
+s
+n
+n
+s
+p button_size 
+n
+p components
+c
+quit
+r
+c
+r
+r
+r
+run
+quit
+c
+r
+c
+r
+exit
+quit
+c
+n
+quit
+c
+r
+quit
+c
+quit
+quit
+c
+n
+n
+n
+p camera_entity 
+s
+n
+s
+s
+n
+s
+c
+quit
+yes
+c
+c
+n
+c
+c
+c
+c
+n
+n
+n
+n
+c
+c
+ls
+ls
+quit
+c
+s
+n
+n
+s
+n
+c
+c
+quit
+y
+c
+quit
+y
+ls
+ls
+l
+c
+p texture
+n
+s
+s
+n
+c
+c
+n
+stepi
+si
+si
+si
+si
+si
+c
+n
+si
+si
+step
+n
+n
+s
+n
+s
+n
+c
+c
+c
+c
+c
+c
+s
+n
+s
+s
+n
+s
+n
+s
+n
+n
+n
+c
+n
+n
+c
+s
+n
+c
+c
+c
+c
+n
+s
+c
+c
+c
+c
+p absolutePath 
+c
+c
+c
+p absolutePath 
+c
+c
+c
+c
+p absolutePath 
+n
+p texture
+n
+p texture
+n
+n
+c
+n
+n
+n
+c
+exit
+cleat
+clear
+qiot
+quit
+y

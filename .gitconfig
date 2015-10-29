@@ -1,0 +1,23 @@
+[user]
+	name = Jorge Munoz
+	email = jorge.munoz@rackspace.com
+[merge]
+    tool = vimdiff
+[core]
+    editor = vi
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    vimdiff = difftool -y -t vimdiff
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[color]
+    branch = auto
+    interactive = auto
+    status = auto
+    diff = auto
+	ui = true
+[diff]
+    tool = vimdiff
+[push]
+	default = simple
