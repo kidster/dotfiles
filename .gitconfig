@@ -21,3 +21,5 @@
     tool = vimdiff
 [push]
 	default = simple
+[http]
+    proxy = proxy1.iad2.corp.rackspace.com:3128

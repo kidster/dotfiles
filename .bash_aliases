@@ -1,66 +1,94 @@
 #JAVA
-export JAVA_HOME=/home/jorge/usr/jvm/jdk1.7
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 
 #IDEA
-export IDEA_JDK=$JAVA_HOME
-export IDEA_HOME=/home/jorge/usr/local/idea
-
-#ANDROID
-export ANDROID_HOME=/home/jorge/source/android-sdk-linux
-export PYTHONSTARTUP=$HOME/.pythonrc
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PATH:$HOME/usr/lib
-export NDK=/home/jorge/source/android-ndk
-
-#GRADLE
-export GRADLE_HOME=/home/jorge/usr/local/gradle
-export GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n"
-alias gc="gradle clean build -x test"
-alias gcb="gradle clean testClasses build -x test"
-alias gt="gradle build"
-alias gjr="gradle jettyRun"
-alias gua="gradle uploadArchives"
-
-#PATH
-export PATH=$JAVA_HOME/bin:$PATH
-export PATH=/home/jorge/source/android-ndk:$PATH
-export PATH=/home/jorge/source/android-sdk-linux/platform-tools:$PATH
-export PATH=$HOME/usr/bin:$PATH
-export PATH=$GRADLE_HOME/bin:$PATH
+#export IDEA_JDK=$JAVA_HOME
+export IDEA_JDK=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$IDEA_HOME/bin:$PATH
 
+#GRADLE
+alias gc="./gradlew clean"
+alias gb="./gradlew clean build"
+alias gct="./gradlew clean build -x nonCommitTest"
+alias gcb="./gradlew clean build -x commitTest -x nonCommitTest"
+alias gt="./gradlew test"
+alias gjr="./gradlew appRunDebug"
+alias gua="./gradlew uploadArchives"
+alias gsa="./gradlew spotlessApply"
+alias gat="./gradlew apiTest"
+
 #MAVEN
-alias mdj="mvnDebug clean jetty:run"
-alias mc="mvn clean compile"
+alias mcc="mvn clean compile"
+alias mcp="mvn clean package"
+alias mct="mvn clean test"
 alias mjr="mvn jetty:run"
-alias mt="mvn test -Didm.properties.location=target/config/JENKINS"
-alias mit="mvn integration-test -Didm.properties.location=target/config/JENKINS"
+alias mp="mvn package"
+alias mt="mvn test"
+alias mtr="mvn tomcat:run"
 
 #TOOLS
+alias ll="ls -al"
+alias json="jq"
 alias xml="xmllint --format -"
-alias json="python -mjson.tool"
+alias html="tidy -i --indent-spaces 4"
+alias cbh="cat ~/.bash_eternal_history"
+
+#GIT
+
+# Git auto completion
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
+fi
 
 stty stop undef # to unmap ctrl-s
 
-#Terminal prompt
-PROMPT_COMMAND='echo -e "\033[0;36m[py:$(pyenv version-name)]\033[0m"'
-
 ## BASH History
-# avoid duplicates..
 export HISTCONTROL=ignoredups:erasedups
+export HISTTIMEFORMAT="%s "
+export PROMPT_COMMAND=""'echo $$ $USER "$(history 1)" >> ~/.bash_eternal_history'
 
-# big big history
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+#Big history
+export HISTSIZE=2147483647
+export HISTFILESIZE=2147483647
 
-# append history entries..
+#Append history entries..
 shopt -s histappend
 
-# After each command, save and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#Avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
 
-#pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# Openssl
+#export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/openssl@3/lib"
+#export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/openssl@3/include"
+#export PATH="/home/linuxbrew/.linuxbrew/opt/openssl@1.1/bin:$PATH"
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+
+#PYTHONPATH
+export PYTHONPATH=$HOME/source/cloud-identity-ops:$HOME/source/cloud-identity-ops/api_scripts/azure_v1_v2_migration:$HOME/source/cloud-identity-ops/api_scripts/azure_v1_v2_rollback:$PYTHONPATH
+
+#HELM
+export TILLER_NAMESPACE=tesla-staging
+
+#DOCKER
+alias dcd="docker-compose down --remove-orphans"
+alias dcb="docker-compose down --remove-orphans && docker-compose up -d"
+
+#USER BIN
+export PATH=$HOME/usr/bin:$PATH
+
+# Cisco VPN auto completion
+if [ -f ~/.vpn-connect-completion.bash ]; then
+      . ~/.vpn-connect-completion.bash
+fi
+
+#johny configs
+export CAFE_CONFIG_FILE_PATH=~/.identity/api.conf
+export CAFE_ROOT_LOG_PATH=~/.identity/logs
+export CAFE_TEST_LOG_PATH=~/.identity/logs
+export CAFE_ENGINE_CONFIG_FILE_PATH=$CAFE_CONFIG_FILE_PATH
+
+# Jmeter
+export JMETER_HOME=/opt/jmeter/apache-jmeter-3.0
+
