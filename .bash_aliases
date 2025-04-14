@@ -11,13 +11,13 @@ export PATH=$IDEA_HOME/bin:$PATH
 #GRADLE
 alias gc="./gradlew clean"
 alias gb="./gradlew clean build"
-alias gct="./gradlew clean build -x nonCommitTest"
-alias gcb="./gradlew clean build -x commitTest -x nonCommitTest"
-alias gt="./gradlew test"
+alias gct="./gradlew clean commitTest"
+alias gcb="./gradlew clean compileJava"
 alias gjr="./gradlew appRunDebug"
 alias gua="./gradlew uploadArchives"
 alias gsa="./gradlew spotlessApply"
 alias gat="./gradlew apiTest"
+alias gd="./gradlew clean dependencies"
 
 #MAVEN
 alias mcc="mvn clean compile"
@@ -35,7 +35,25 @@ alias xml="xmllint --format -"
 alias html="tidy -i --indent-spaces 4"
 alias cbh="cat ~/.bash_eternal_history"
 
-#GIT
+# CD Function to activate virtual venv
+function cd() {
+  builtin cd "$@"
+
+  if [[ -z "$VIRTUAL_ENV" ]] ; then
+    ## If env folder is found then activate the vitualenv
+      if [[ -d ./.venv ]] ; then
+        source ./.venv/bin/activate
+      fi
+  else
+    ## check the current folder belong to earlier VIRTUAL_ENV folder
+    # if yes then do nothing
+    # else deactivate
+      parentdir="$(dirname "$VIRTUAL_ENV")"
+      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+        deactivate
+      fi
+  fi
+}
 
 # Git auto completion
 if [ -f ~/.git-completion.bash ]; then
@@ -45,7 +63,7 @@ fi
 stty stop undef # to unmap ctrl-s
 
 ## BASH History
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoredups:erasedups:ignorespace
 export HISTTIMEFORMAT="%s "
 export PROMPT_COMMAND=""'echo $$ $USER "$(history 1)" >> ~/.bash_eternal_history'
 
@@ -55,9 +73,6 @@ export HISTFILESIZE=2147483647
 
 #Append history entries..
 shopt -s histappend
-
-#Avoid duplicates..
-export HISTCONTROL=ignoredups:erasedups
 
 # Openssl
 #export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/openssl@3/lib"
