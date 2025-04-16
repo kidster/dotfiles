@@ -11,7 +11,7 @@ export PATH=$IDEA_HOME/bin:$PATH
 #GRADLE
 alias gc="./gradlew clean"
 alias gb="./gradlew clean build"
-alias gct="./gradlew clean commitTest"
+alias gct="./gradlew clean commonTest commitTest"
 alias gcb="./gradlew clean compileJava"
 alias gjr="./gradlew appRunDebug"
 alias gua="./gradlew uploadArchives"
